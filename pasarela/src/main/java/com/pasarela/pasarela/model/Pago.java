@@ -3,8 +3,6 @@ package com.pasarela.pasarela.model;
 
 import javax.persistence.*;
 import lombok.*;
-
-
 @Getter 
 @Setter 
 @NoArgsConstructor
