@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PasarelaApplication<pasarela>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.pasarela.pasarela.PasarelaApplication",
+            "projectName": "pasarela",
+            "args": ""
+        }
+    ]
+}
