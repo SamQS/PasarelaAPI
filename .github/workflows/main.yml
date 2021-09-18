@@ -21,7 +21,7 @@ jobs:
         java-version: '11'
     
     - name: Build with Maven Backend
-      run: mvn -B package --file pasarelaapi/pom.xml -DskipTests
+      run: mvn -B package --file pasarela/pom.xml -DskipTests
 
     - name: Build, Push and Release a Docker container to Heroku Backend
       uses: gonuit/heroku-docker-deploy@v1.3.2 
@@ -33,7 +33,7 @@ jobs:
           
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
 
-          dockerfile_directory: ./pasarelaapi
+          dockerfile_directory: ./pasarela
 
           dockerfile_name: DockerFile
 
