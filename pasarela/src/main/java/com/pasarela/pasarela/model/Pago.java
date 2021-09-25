@@ -1,6 +1,6 @@
 package com.pasarela.pasarela.model;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import lombok.*;
 @Getter 
@@ -13,12 +13,13 @@ import lombok.*;
 public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @JsonIgnore
+    private String id;
     private Integer numeroTarjeta;
     private String tipoTarjeta;
     private Integer fechaVencimiento;
     private Integer codigoCcv;
     private String direccionTarjeta;
-
+    
 
 }

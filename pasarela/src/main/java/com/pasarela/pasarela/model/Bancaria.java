@@ -11,9 +11,9 @@ import lombok.*;
 public class Bancaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String numeroCuenta;
+    private String id;
+    private Integer numeroCuenta;
     private Integer dni;
-    private Integer nombreBanco;      
+    private String nombreBanco;      
     private Integer telefono;
 }
