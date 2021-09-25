@@ -19,7 +19,6 @@ public class PasarelaController {
 public PasarelaController(PagoRepository pagoData, BancariaRepository bancariaData){
 
   
-
   this.pagoData = pagoData;
   this.bancariaData = bancariaData;
 
