@@ -19,5 +19,4 @@ public class Pago {
     private Integer fechaVencimiento;
     private Integer codigoCcv;
     private String direccionTarjeta;
-    private String nombre;
 }
