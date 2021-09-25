@@ -14,11 +14,13 @@ public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Integer numeroTarjeta;
     private String tipoTarjeta;
     private Integer fechaVencimiento;
     private Integer codigoCcv;
     private String direccionTarjeta;
+    private BigDecimal montoTotal;
 
 
 }
