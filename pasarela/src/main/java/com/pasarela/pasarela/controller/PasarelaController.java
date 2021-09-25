@@ -25,14 +25,14 @@ public PasarelaController(PagoRepository pagoData, BancariaRepository bancariaDa
 
 }
 
-@PostMapping(value = "/{crearTarjeta}", produces = MediaType.APPLICATION_JSON_VALUE)    
+@PostMapping(value = "/crearTarjeta", produces = MediaType.APPLICATION_JSON_VALUE)    
 public ResponseEntity<Integer> registrarTarjeta(@RequestBody Pago pa){
   pagoData.save(pa);
   pagoData.flush();    
   return  new ResponseEntity<Integer>(pa.getId(), HttpStatus.CREATED);    
 }
 
-@GetMapping(value = "/{tarjetas}", produces = MediaType.APPLICATION_JSON_VALUE)
+@GetMapping(value = "/tarjetas", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity<Pago> Tarjetas(@PathVariable Integer numeroTarjeta){
   Optional<Pago> optTarj = pagoData.findByNumeroTarjeta(numeroTarjeta);
   if(optTarj.isPresent()){
@@ -41,24 +41,24 @@ public ResponseEntity<Pago> Tarjetas(@PathVariable Integer numeroTarjeta){
       return new ResponseEntity<Pago>(HttpStatus.NOT_FOUND);
   }  
 }
-@GetMapping(value = "/{tarjetas--}", produces = MediaType.APPLICATION_JSON_VALUE)
+@GetMapping(value = "/tarjetas--", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Pago>> Tarjetass() {
         return new ResponseEntity<List<Pago>>(HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/{BorrarTarjeta}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/BorrarTarjeta", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Pago> deleteTarjeta(@PathVariable Integer numeroTarjeta) {
       pagoData.findByNumeroTarjeta(numeroTarjeta);
         return new ResponseEntity<Pago>(HttpStatus.OK);
     }
 
-    @PostMapping(value = "/{registrarCuenta}", produces = MediaType.APPLICATION_JSON_VALUE)    
+    @PostMapping(value = "/registrarCuenta", produces = MediaType.APPLICATION_JSON_VALUE)    
     public ResponseEntity<Integer> registrarCuentaBancaria(@RequestBody Bancaria ba){
       bancariaData.save(ba);
       bancariaData.flush();    
       return  new ResponseEntity<Integer>(ba.getId(), HttpStatus.CREATED);    
     }
-    @GetMapping(value = "/{Cuentas}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/Cuentas", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity<Bancaria> cuentas(@PathVariable Integer numeroCuenta){
   Optional<Bancaria> optBanc = bancariaData.findByNumeroCuenta(numeroCuenta);
   if(optBanc.isPresent()){
