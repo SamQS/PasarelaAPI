@@ -12,13 +12,13 @@ import java.util.*;
 @RequestMapping(value ="api/pasarela", produces ="application/json")
 public class PasarelaController {
 
-    private final ProfileRepository profileData;
+
     private final PagoRepository pagoData;
 
-public PasarelaController(ProfileRepository profileData,  PagoRepository pagoData){
+public PasarelaController(  PagoRepository pagoData){
 
   
-  this.profileData = profileData;
+
   this.pagoData = pagoData;
 
 }
@@ -31,14 +31,7 @@ public ResponseEntity<Integer> registrarTarjeta(@RequestBody Pago pa){
 
     
 }
-@PostMapping(value = "/{crearProfile}", produces = MediaType.APPLICATION_JSON_VALUE)    
-    public ResponseEntity<Integer> crearProfile(@RequestBody Profile p){
-      profileData.save(p);
-      profileData.flush();
-      return  new ResponseEntity<Integer>(p.getDni(), HttpStatus.CREATED);
 
-        
-}
 @GetMapping(value = "/{tarjetas}", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity<Pago> Tarjetas(@PathVariable Integer numeroTarjeta){
   Optional<Pago> optTarj = pagoData.findByNumeroTarjeta(numeroTarjeta);
@@ -59,13 +52,5 @@ public ResponseEntity<Pago> Tarjetas(@PathVariable Integer numeroTarjeta){
         return new ResponseEntity<Pago>(HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{Perfiles}", produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<Profile> Profiles(@PathVariable Integer dni){
-  Optional<Profile> optPro = profileData.findByDni(dni);
-  if(optPro.isPresent()){
-      return new ResponseEntity<Profile>(optPro.get(),HttpStatus.OK);
-  }else{
-      return new ResponseEntity<Profile>(HttpStatus.NOT_FOUND);
-  }  
-}
+
 }
