@@ -14,9 +14,6 @@ public class Bancaria {
     private Integer id;
     private String numeroCuenta;
     private Integer dni;
-
-    private Integer nombreBanco;
-    
-    
+    private Integer nombreBanco;      
     private Integer telefono;
 }
