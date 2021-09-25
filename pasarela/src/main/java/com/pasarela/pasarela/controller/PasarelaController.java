@@ -15,21 +15,21 @@ public class PasarelaController {
 private Map<String,Pago> pagos;
 
     private final PagoRepository pagoData;
-    private final BancariaRepository bancariaData;
+    
 
-public PasarelaController(PagoRepository pagoData, BancariaRepository bancariaData){
+public PasarelaController(PagoRepository pagoData){
 
   
   this.pagoData = pagoData;
   pagos = new HashMap<String,Pago>();
 
-  this.bancariaData = bancariaData;
+
 
 }
 @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity <List<Pago>> TarjetasRegistradas(){
+public ResponseEntity  <Map<String, Pago>> TarjetasRegistradas(){
 
-    return new ResponseEntity<List<Pago>>(HttpStatus.OK);
+    return new ResponseEntity<Map<String, Pago>>(pagos,HttpStatus.OK);
 
 }
 @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -46,10 +46,10 @@ public ResponseEntity <String> create(@RequestBody Pago pa){
 
 }
 @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<Pago> find(@PathVariable String id){
+public ResponseEntity<Pago> TarjetasRegistradass(@PathVariable String id){
     if(pagos.containsKey(id)){
-        Pago p = pagos.get(id);
-        return new ResponseEntity<Pago>(p, HttpStatus.OK);
+        Pago pa = pagos.get(id);
+        return new ResponseEntity<Pago>(pa, HttpStatus.OK);
     }else{
         return new ResponseEntity<Pago>(HttpStatus.NOT_FOUND);
     }
