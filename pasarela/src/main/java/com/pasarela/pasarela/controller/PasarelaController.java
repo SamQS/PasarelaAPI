@@ -14,12 +14,14 @@ public class PasarelaController {
 
 
     private final PagoRepository pagoData;
+    private final BancariaRepository bancariaData;
 
-public PasarelaController(  PagoRepository pagoData){
+public PasarelaController(PagoRepository pagoData, BancariaRepository bancariaData){
 
   
 
   this.pagoData = pagoData;
+  this.bancariaData = bancariaData;
 
 }
 
@@ -27,9 +29,7 @@ public PasarelaController(  PagoRepository pagoData){
 public ResponseEntity<Integer> registrarTarjeta(@RequestBody Pago pa){
   pagoData.save(pa);
   pagoData.flush();    
-  return  new ResponseEntity<Integer>(pa.getId(), HttpStatus.CREATED);
-
-    
+  return  new ResponseEntity<Integer>(pa.getId(), HttpStatus.CREATED);    
 }
 
 @GetMapping(value = "/{tarjetas}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -51,6 +51,25 @@ public ResponseEntity<Pago> Tarjetas(@PathVariable Integer numeroTarjeta){
       pagoData.findByNumeroTarjeta(numeroTarjeta);
         return new ResponseEntity<Pago>(HttpStatus.OK);
     }
+
+    @PostMapping(value = "/{registrarCuenta}", produces = MediaType.APPLICATION_JSON_VALUE)    
+    public ResponseEntity<Integer> registrarCuentaBancaria(@RequestBody Bancaria ba){
+      bancariaData.save(ba);
+      bancariaData.flush();    
+      return  new ResponseEntity<Integer>(ba.getId(), HttpStatus.CREATED);    
+    }
+    @GetMapping(value = "/{Cuentas}", produces = MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity<Bancaria> cuentas(@PathVariable Integer numeroCuenta){
+  Optional<Bancaria> optBanc = bancariaData.findByNumeroCuenta(numeroCuenta);
+  if(optBanc.isPresent()){
+      return new ResponseEntity<Bancaria>(optBanc.get(),HttpStatus.OK);
+  }else{
+      return new ResponseEntity<Bancaria>(HttpStatus.NOT_FOUND);
+  }  
+}
+
+
+
 
 
 }
