@@ -62,6 +62,12 @@ public ResponseEntity<Pago> TarjetasRegistradass(@PathVariable String id){
 
 
 //BAncaria
+@GetMapping(value = "/CuentasB", produces = MediaType.APPLICATION_JSON_VALUE)
+public ResponseEntity  <Map<String, Bancaria>> CuentasBancarias(){
+
+    return new ResponseEntity<Map<String, Bancaria>>(bancarias,HttpStatus.OK);
+
+}
 @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity <String> createCuentaBancaria(@RequestBody Bancaria ba){
 
@@ -75,12 +81,8 @@ public ResponseEntity <String> createCuentaBancaria(@RequestBody Bancaria ba){
     return new ResponseEntity<String>(id,HttpStatus.CREATED);
 
 }
-@GetMapping(value = "/CuentasB", produces = MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity  <Map<String, Bancaria>> CuentasBancarias(){
 
-    return new ResponseEntity<Map<String, Bancaria>>(bancarias,HttpStatus.OK);
 
-}
 @GetMapping(value = "/cuentas{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity<Bancaria> CuentasBancarias(@PathVariable String id){
     if(bancarias.containsKey(id)){
