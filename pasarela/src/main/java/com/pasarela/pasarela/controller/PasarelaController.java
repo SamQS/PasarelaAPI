@@ -30,13 +30,13 @@ public PasarelaController(PagoRepository pagoData,BancariaRepository bancariaDat
 
 
 }
-@GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+@GetMapping(value = "/{TarjetasRegistradas}", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity  <Map<String, Pago>> TarjetasRegistradas(){
 
     return new ResponseEntity<Map<String, Pago>>(pagos,HttpStatus.OK);
 
 }
-@PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+@PostMapping(value = "/{createTarjeta}", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity <String> createTarjeta(@RequestBody Pago pa){
 
   pagoData.save(pa);
@@ -84,7 +84,7 @@ public ResponseEntity <String> createCuentaBancaria(@RequestBody Bancaria ba){
 }
 
 
-@GetMapping(value = "/{id}b", produces = MediaType.APPLICATION_JSON_VALUE)
+@GetMapping(value = "/{id}CuentasBancarias", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity<Bancaria> CuentasBancarias(@PathVariable String id){
     if(bancarias.containsKey(id)){
         Bancaria ba = bancarias.get(id);

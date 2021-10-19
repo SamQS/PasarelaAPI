@@ -14,8 +14,9 @@ public class Bancaria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
     private String id;
+    private String nombreBancaria;
     private Integer numeroCuenta;
-    private Integer dni;
-    private String nombreBanco;      
-    private Integer telefono;
+    private String nombreBanco; 
+    private Integer dni;         
+    private Integer monto;
 }
