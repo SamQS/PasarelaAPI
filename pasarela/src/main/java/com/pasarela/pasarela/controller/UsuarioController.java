@@ -33,11 +33,8 @@ public class UsuarioController {
         return INDEX;
     }
     @PostMapping("/Usuario/Login")
-    public String LoginPost(Model model, 
-    @Valid Usuario objUser, 
-    HttpServletRequest request, 
+    public String LoginPost(Model model, @Valid Usuario objUser, HttpServletRequest request, 
     BindingResult result ){
-
         String page=INDEX;
             model.addAttribute(MODEL_CONTACT, new Usuario());
             if(result.hasFieldErrors()) {
@@ -49,7 +46,7 @@ public class UsuarioController {
                         model.addAttribute(MODEL_CONTACT,userDB.get());
                         model.addAttribute(MODEL_MESSAGE, "Usuario existe");
                         request.getSession().setAttribute("user", objUser);
-                        page="welcome";  
+                        page="Inicio";  
                     }else{
                         model.addAttribute(MODEL_MESSAGE, "Password no coincide");  
                     }
@@ -60,9 +57,7 @@ public class UsuarioController {
             return page;             
        
     }
-
-
-    @GetMapping("/Usuario/logout")
+    @GetMapping("/Usuario/Logout")
 	public String logout(HttpServletRequest request) {
 		request.getSession().invalidate();
 		return "redirect:/";

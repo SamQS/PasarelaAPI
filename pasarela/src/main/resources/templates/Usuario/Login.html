@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html xml:lang="es" xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{Cabeza :: Cabeza (~{::body},'login')}">
+      th:replace="~{fragments/Cabeza :: Cabeza (~{::body},'login')}">
 
 <body> 
     <div class="container">
@@ -30,7 +30,7 @@
               <div class="form-group row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2">
-                  <button th:with="text='Login'" class="btn btn-primary" type="submit" th:text="${text}">
+                  <button th:with="text='Inicia Sesion'" class="btn btn-primary" type="submit" th:text="${text}" href="/">
                 </div>
               </div>
             </form>
