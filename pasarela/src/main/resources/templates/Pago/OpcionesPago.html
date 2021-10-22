@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xml:lang="es" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/Cabeza :: Cabeza (~{::body},'login')}">
+ <body>
+     <div class="container"> 
+    <h1 class="title" style="text-align: center;">PAGO</h1>
+
+    <div class="card-columns">            
+     <div class="card" style="top:100px; left: 460px ; width: 300px; height:85px ;color: #fff;"><br>  
+         <h5 class="card-title" style="color:#ffffff;" >--------
+         <a class="btn btn-primary" style="width: 275px; height:40px" href="/Usuario/Login">Pagar por cuenta Bancaria </a>  </h5>           
+     </div>
+     <br> 
+
+     <div class="card-columns">
+         <div class="card" style="top:100px;left: 460px ; width:300px; height:85px;color: #fff;">    <br>              
+             <h5 class="card-title" style="color:#ffffff;" >------------
+                 <a class="btn btn-primary" href="/Orden/AddItem/29"><i class="icofont-cart"></i> Pagar por Tarjeta</a></h5>
+             </div>                  
+     <br> 
+
+
+
+
+      <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+      <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+      <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+      <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>    
+  
+</body>
+
+</html>
