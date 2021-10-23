@@ -9,13 +9,13 @@ function graficoPrincipal() {
       }).done(function (jsonData) {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'tipoTarjeta');
-        data.addColumn('number', 'montototal');
+        data.addColumn('number', 'monto');
         
 
         jsonData.forEach(function (row) {
           data.addRow([
             row.tipoTarjeta,
-            row.montototal
+            row.monto
           ]);
         });
 

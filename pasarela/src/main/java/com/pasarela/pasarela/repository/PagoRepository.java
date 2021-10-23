@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface PagoRepository extends JpaRepository<Pago, String>{
     
     
-    @Query("SELECT tipoTarjeta as tipoTarjeta, SUM(p.monto) as montoTotal FROM Pago p GROUP BY p.tipoTarjeta")
+    @Query("SELECT tipoTarjeta as tipoTarjeta, SUM(p.monto) as monto FROM Pago p GROUP BY p.tipoTarjeta")
     List<Map<String, Object>> querySumaTotal();
     
 }
