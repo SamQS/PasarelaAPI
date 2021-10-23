@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class BancariaController {
      private static final String INDEX = "PagoBancaria/PagoBancaria";
-     private static String MODEL_BANCAR="bancar";
+     private static String MODEL_BANCAR="banco";
      private final BancariaRepository bancarData;
      public BancariaController(BancariaRepository bancarData){
         this.bancarData = bancarData;

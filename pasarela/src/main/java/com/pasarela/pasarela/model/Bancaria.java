@@ -13,7 +13,7 @@ public class Bancaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
-    private String id;
+    private Integer id;
     private String nombreBancaria;
     private Integer numeroCuenta;
     private String nombreBanco; 

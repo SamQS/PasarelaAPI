@@ -26,10 +26,8 @@ public PasarelaController(PagoRepository pagoData,BancariaRepository bancariaDat
   this.bancariaData = bancariaData;
   pagos = new HashMap<String,Pago>();
   bancarias = new HashMap<String,Bancaria>();
-
-
-
 }
+//Tarjeta
 @GetMapping(value = "/{TarjetasRegistradas}", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity  <Map<String, Pago>> TarjetasRegistradas(){
 
@@ -42,11 +40,11 @@ public ResponseEntity <String> createTarjeta(@RequestBody Pago pa){
   pagoData.save(pa);
   pagoData.flush();
 
-    String id = UUID.randomUUID().toString();
-    pa.setId(id);
-    pagos.put(id, pa);
+    String nombreTarjeta = UUID.randomUUID().toString();
+    pa.setNombreTarjeta(nombreTarjeta);
+    pagos.put(nombreTarjeta, pa);
     
-    return new ResponseEntity<String>(id,HttpStatus.CREATED);
+    return new ResponseEntity<String>(nombreTarjeta,HttpStatus.CREATED);
 
 }
 @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -61,7 +59,7 @@ public ResponseEntity<Pago> TarjetasRegistradass(@PathVariable String id){
 
 
 
-//BAncaria
+//Bancaria
 @GetMapping(value = "/{CuentasBancarias}", produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity  <Map<String, Bancaria>> CuentasBancarias(){
 
@@ -75,11 +73,11 @@ public ResponseEntity <String> createCuentaBancaria(@RequestBody Bancaria ba){
     bancariaData.save(ba);
     bancariaData.flush();
 
-    String id = UUID.randomUUID().toString();
-    ba.setId(id);
-    bancarias.put(id, ba);
+    String nombreBancaria = UUID.randomUUID().toString();
+    ba.setNombreBancaria(nombreBancaria);
+    bancarias.put(nombreBancaria, ba);
     
-    return new ResponseEntity<String>(id,HttpStatus.CREATED);
+    return new ResponseEntity<String>(nombreBancaria,HttpStatus.CREATED);
 
 }
 

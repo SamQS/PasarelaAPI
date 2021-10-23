@@ -14,13 +14,15 @@ public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
-    private String id;
+    private Integer id;
     private String nombreTarjeta;
-    private Integer numeroTarjeta;
+    public Integer numeroTarjeta;
     private Integer fechaVencimiento;
+    private String tipoTarjeta;
     private Integer codigoCcv;
     private Integer dni;
     private Integer monto;
+    
     
 
 }

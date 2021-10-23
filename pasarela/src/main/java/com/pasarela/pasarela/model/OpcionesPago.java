@@ -1,9 +1,6 @@
 package com.pasarela.pasarela.model;
 
 
-
-import com.pasarela.pasarela.model.*;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
