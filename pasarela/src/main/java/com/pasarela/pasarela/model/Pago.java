@@ -22,6 +22,7 @@ public class Pago {
     private Integer codigoCcv;
     private Integer dni;
     private Integer monto;
+    private Integer cantidad;
     
     
 

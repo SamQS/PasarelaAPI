@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 
 <html xml:lang="es" xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{fragments/Cabeza :: Cabeza (~{::body},'contact')}">
+      th:replace="~{fragments/Cabeza :: Cabeza (~{::body},'pago')}">
 <body>
+      <div class="container">
 
-    
+            <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div id="pagos" class="mb-3">
+                        <div class="row">
+                          <div th:each="pago : ${pagos}" class="col-sm-4">
+                            <div class="card mb-3">
+                              <div class="card-body">
+                              
+                              </div>
+                              <div class="card-body">
+                                <h5 class="card-title" th:text="${pago.nombreTarjeta}">Product name</h5>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
 
 

@@ -25,6 +25,8 @@ public class TarjetaController {
          model.addAttribute(MODEL_CONTACT, new Pago());
          return INDEX;
      }
+  
+
     @PostMapping("/PagoTarjeta/PagoTarjeta")
     public String createSubmitForm(Model model, 
         @Valid Pago objTarje, BindingResult result){
