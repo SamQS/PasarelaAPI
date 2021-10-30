@@ -11,47 +11,53 @@
             <div class="form-group row">
               <h1>Pago Cuenta Bancaria</h1>
             </div>
+            <br> 
             <form th:object="${banco}" th:action="@{/PagoBancaria/PagoBancaria}" method="post">
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label for="nombreBancaria">Nombre Tarjeta</label>
+                  <label for="nombreBancaria">Nombre Tarjeta:</label>
                 </div>
                 <div class="col-sm-2">
                   <input type="text" th:field="*{nombreBancaria}" />
                 </div>
               </div>
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label for="numeroCuenta">Numero Cuenta</label>
+                  <label for="numeroCuenta">Numero Cuenta:</label>
                 </div>
                 <div class="col-sm-2">
                   <input type="text" th:field="*{numeroCuenta}"  />
                 </div>
               </div>  
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label for="nombreBanco">Nombre Banco</label>
+                  <label for="nombreBanco">Nombre Banco:</label>
                 </div>
                 <div class="col-sm-2">
                   <input type="text" th:field="*{nombreBanco}" />
                 </div>
-              </div>             
+              </div>   
+              <br>           
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label for="dni">DNI</label>
+                  <label for="dni">DNI:</label>
                 </div>
                 <div class="col-sm-2">
                   <input type="text" th:field="*{dni}"  />
                 </div>
-              </div>           
+              </div>  
+              <br>          
               <div class="form-group row">
                 <div class="col-sm-2">
-                  <label for="monto">Monto</label>
+                  <label for="monto">Monto:</label>
                 </div>
                 <div class="col-sm-2">
                   <input type="text" th:field="*{monto}" id="currency" />
                 </div>
               </div>  
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2">
@@ -59,6 +65,7 @@
                 </div>
               </div>
             </form>
+            <br> 
             <p th:text="${mensaje}" />
           </div>
         </div>

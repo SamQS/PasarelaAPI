@@ -11,6 +11,7 @@
             <div class="form-group row">
               <h1>Pago Tarjeta</h1>
             </div>
+            <br> 
             <form th:object="${pago}" th:action="@{/PagoTarjeta/PagoTarjeta}" method="post">
               <div class="form-group row">
                 <div class="col-sm-2">
@@ -20,7 +21,7 @@
                   <input type="text" th:field="*{nombreTarjeta}" />
                 </div>
               </div>
-
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2">
                   <label for="numeroTarjeta">Numero Tarjeta: </label>
@@ -29,7 +30,7 @@
                   <input type="text" th:field="*{numeroTarjeta}"/>
                 </div>
               </div>
-
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2">
                   <label for="tipoTarjeta">Tipo Tarjeta: </label>
@@ -38,7 +39,7 @@
                   <input type="text" th:field="*{tipoTarjeta}"/>
                 </div>
               </div>
-
+              <br> 
 
               <div class="form-group row">
                 <div class="col-sm-2">
@@ -48,7 +49,7 @@
                   <input type="text" th:field="*{fechaVencimiento}" />
                 </div>
               </div>
-
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2">
                   <label for="codigoCcv">CVV: </label>
@@ -57,7 +58,7 @@
                   <input type="text" th:field="*{codigoCcv}" />
                 </div>
               </div>    
-
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2">
                   <label for="dni">DNI: </label>
@@ -66,7 +67,7 @@
                   <input type="text" th:field="*{dni}" />
                 </div>
               </div>  
-
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2">
                   <label for="monto">Monto: </label>
@@ -75,6 +76,7 @@
                   <input type="text" th:field="*{monto}" id="currency" data-thousands="," data-decimal="." />
                 </div>
               </div>  
+              <br> 
               <div class="form-group row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2">
@@ -82,6 +84,7 @@
                 </div>
               </div>
             </form>
+            <br> 
             <p th:text="${mensaje}" />
           </div>
         </div>

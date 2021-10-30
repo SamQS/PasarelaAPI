@@ -6,13 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
-
-
 @Controller
 public class HomeController {
 
     private static final String VIEW_DASHBOARD ="dashboard"; 
-    private static final String VIEW_CONTACT ="pago"; 
+    private static final String VIEW_DASHBOARD2 ="dashboard2"; 
+    private static final String VIEW_OPTION ="Dash/opcionDash"; 
+
     @GetMapping("/")
     public String index() {
         return "Inicio";
@@ -21,10 +21,12 @@ public class HomeController {
     public String dashboard(Model model) {
         return VIEW_DASHBOARD;
     }
-
-    @GetMapping("/Proforma/ProformaTarjeta")
-    public String proformat(Model model) {
-         model.addAttribute(VIEW_CONTACT, new Pago());
-         return VIEW_CONTACT;
-     }
+    @GetMapping("/dashboard2")
+    public String dashboard2(Model model) {
+        return VIEW_DASHBOARD2;
+    }
+    @GetMapping("/Dash/opcionDash")
+    public String opcionDash(Model model) {
+        return VIEW_OPTION;
+    }
 }
