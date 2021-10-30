@@ -14,7 +14,7 @@ public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
-    private Integer id;
+    private String id;
     private String nombreTarjeta;
     public Integer numeroTarjeta;
     private Integer fechaVencimiento;

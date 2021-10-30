@@ -40,11 +40,11 @@ public ResponseEntity <String> createTarjeta(@RequestBody Pago pa){
   pagoData.save(pa);
   pagoData.flush();
 
-    String nombreTarjeta = UUID.randomUUID().toString();
-    pa.setNombreTarjeta(nombreTarjeta);
-    pagos.put(nombreTarjeta, pa);
+    String id = UUID.randomUUID().toString();
+    pa.setNombreTarjeta(id);
+    pagos.put(id, pa);
     
-    return new ResponseEntity<String>(nombreTarjeta,HttpStatus.CREATED);
+    return new ResponseEntity<String>(id,HttpStatus.CREATED);
 
 }
 @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -56,6 +56,8 @@ public ResponseEntity<Pago> TarjetasRegistradass(@PathVariable String id){
         return new ResponseEntity<Pago>(HttpStatus.NOT_FOUND);
     }
 } 
+
+
 
 
 
@@ -73,11 +75,11 @@ public ResponseEntity <String> createCuentaBancaria(@RequestBody Bancaria ba){
     bancariaData.save(ba);
     bancariaData.flush();
 
-    String nombreBancaria = UUID.randomUUID().toString();
-    ba.setNombreBancaria(nombreBancaria);
-    bancarias.put(nombreBancaria, ba);
+    String id = UUID.randomUUID().toString();
+    ba.setNombreBancaria(id);
+    bancarias.put(id, ba);
     
-    return new ResponseEntity<String>(nombreBancaria,HttpStatus.CREATED);
+    return new ResponseEntity<String>(id,HttpStatus.CREATED);
 
 }
 
