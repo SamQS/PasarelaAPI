@@ -2,6 +2,7 @@ package com.pasarela.pasarela.model;
 
 import javax.persistence.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Getter 
 @Setter 
 @NoArgsConstructor
@@ -12,7 +13,7 @@ import lombok.*;
 public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="pago_id")
+    @JsonIgnore
     private Integer id;
     private String nombreTarjeta;
     private Integer numeroTarjeta;
