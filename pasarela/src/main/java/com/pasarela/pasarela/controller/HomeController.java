@@ -12,6 +12,7 @@ public class HomeController {
     private static final String VIEW_DASHBOARD ="dashboard"; 
     private static final String VIEW_DASHBOARD2 ="dashboard2"; 
     private static final String VIEW_OPTION ="Dash/opcionDash"; 
+    private static final String VIEW_BANCARIA ="PagoBancaria/PagoBancaria"; 
 
     @GetMapping("/")
     public String index() {
@@ -29,4 +30,9 @@ public class HomeController {
     public String opcionDash(Model model) {
         return VIEW_OPTION;
     }
+    @GetMapping("/PagoBancaria/PagoBancaria")
+    public String PAGOBANCARIA(Model model) {
+        return VIEW_BANCARIA;
+    }
+
 }

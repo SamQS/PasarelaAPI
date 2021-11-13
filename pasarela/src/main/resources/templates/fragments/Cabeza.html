@@ -13,9 +13,9 @@
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-datepicker/css/bootstrap-datepicker.css}" />
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}" />
 </head>
-<body style="background-image: url(/img/pasarela2.jpg) ; background-size: 2000px;" >
+<body style="background-image: url(/img/bhu.jpg) ; background-size: 2000px;" >
     <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><h1 style="font-size: 24px">Pasarela USMP</h1></a>
+        <a class="navbar-brand" href="/"><h1 style="font-size: 24px">Pasarela USMP</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,16 +25,7 @@
 
             <li class="nav-item active">
               <a class="nav-link text-black" href="/catalogo/index">Sobre Nosotros</a>
-            </li> 
-            <th:block th:if="${session.user!=null}">
-            <li class="nav-item">
-              <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>    
-            <li class="nav-item">
-              <a class="nav-link" href="/contacto/create">Contacto</a>
-            </li>
-           </th:block>   
-                              
+            </li>                               
           </ul>   
           
           

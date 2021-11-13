@@ -10,51 +10,56 @@
         <div class="row">
             <div class="col-sm-10 mt-5">
                 <div class="form-group row">
-                    <h1> Contacto Pasarela USMP</h1>
+                    <h1 class="title" style="text-align: center;"> Consulta Pasarela USMP</h1>
                 </div>
                 <form th:object="${contact}" th:action="@{/Contacto/Contacto}" method="post">
                 <div class="form-group row">
                     <div class="col-sm-2">
-                        <label for="name"> Nombre </label>
+                        <label for="name"> Nombre: </label>
                     </div>
                     <div class="col-sm-2">
                         <input type="text" th:field="*{name}" />
                     </div>
                 </div>
+                <br>
                 
                 <div class="form-group row">
                     <div class="col-sm-2">
-                        <label for="email"> Email </label>
+                        <label for="email"> Email: </label>
                     </div>
                     <div class="col-sm-2">
                         <input type="text" data-inputmask="'alias': 'email'"
                         autocomplete="off" th:field="*{email}" />
                     </div>
                 </div>
+                <br>
                 <div class="form-group row">
                     <div class="col-sm-2">
-                        <label for="phone"> Telefono </label>
+                        <label for="phone"> Telefono: </label>
                     </div>
                     <div class="col-sm-2">
                         <input type="text" data-inputmask="'mask': '(051) 789878'" th:field="*{phone}" />
                     </div>
                 </div>
+                <br>
                 <div class="form-group row">
                     <div class="col-sm-2">
-                        <label for="reason"> Consulta </label>
+                        <label for="reason"> Consulta: </label>
                     </div>
                     <div class="col-sm-2">
                         <textarea cols="22" rows="4" th:field="*{reason}" />
                     </div>
                 </div>
+                <br>
                 <div class="form-group row">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-2">
-                        <button th:with="text='Add Contact'" class="btn btn-primary" type="submit" th:text="${text}"> Agregar
-                            Contacto</button>
+                        <button th:with="text='Enviar Consulta'" class="btn btn-primary" type="submit" th:text="${text}"> Enviar
+                            Consulta</button>
                          </div>
                         </div>
                     </form>
+                    <br>
                     <p th:text="${mensaje}" />
                 </div>
             </div>

@@ -16,7 +16,7 @@ th:replace="~{fragments/Cabeza :: Cabeza (~{::body},'home')}">
             <div class="card-columns">
                 <div class="card" style="top:100px;left: 460px ; width:300px; height:85px;color: #fff;">    <br>              
                     <h5 class="card-title" style="color:#ffffff;" >------------
-                        <a class="btn btn-primary" href="/Orden/AddItem/29"><i class="icofont-cart"></i> Registrate</a></h5>
+                        <a class="btn btn-primary" href="/Register/Register"><i class="icofont-cart"></i> Registrate</a></h5>
                     </div>                  
             <br> 
         </th:block>      
@@ -24,8 +24,8 @@ th:replace="~{fragments/Cabeza :: Cabeza (~{::body},'home')}">
         <th:block th:if="${session.user!=null}">        
         <div class="card-columns">            
             <div class="card" style="top:100px; left: 460px ; width: 300px; height:85px ;color: #fff;"><br>  
-                <h5 class="card-title" style="color:#ffffff;" >---
-                <a class="btn btn-primary" style="width: 250px; height:40px" href="">Metodos de Pago Registrados</a>  </h5>           
+                <h5 class="card-title" style="color:#ffffff;" >--
+                <a class="btn btn-primary" style="width: 250px; height:40px" href="/Proforma/ProformaTarjeta">Metodos de Pago Registrados</a>  </h5>           
             </div>
             <br>       
             <div class="card-columns">
@@ -36,15 +36,15 @@ th:replace="~{fragments/Cabeza :: Cabeza (~{::body},'home')}">
             <br>                
             <div class="card-columns">
                     <div class="card" style="top:100px;left: 460px ; width: 300px; height:85px;color: #fff;">   <br>                    
-                        <h5 class="card-title" style="color:#ffffff;" >-------------
+                        <h5 class="card-title" style="color:#ffffff;" >-----------
                         <a class="btn btn-primary" href="/Dash/opcionDash">Dashboard</a></h5>                      
                     </div>
                     <br>  
                 </th:block> 
         <div class="card-columns">
                     <div class="card" style="top:100px;left: 460px ; width: 300px; height:85px;color: #fff;">   <br>                    
-                        <h5 class="card-title" style="color:#ffffff;" >-------------
-                        <a class="btn btn-primary" href="/Contacto/Contacto"><i class="icofont-cart"></i>Contacto</a></h5>                      
+                        <h5 class="card-title" style="color:#ffffff;" >------------
+                        <a class="btn btn-primary" href="/Contacto/Contacto"><i class="icofont-cart"></i>Consulta</a></h5>                      
                     </div>
                     
   

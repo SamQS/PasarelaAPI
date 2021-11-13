@@ -1,6 +1,5 @@
 package com.pasarela.pasarela.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import lombok.*;
 @Getter 
@@ -13,16 +12,16 @@ import lombok.*;
 public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
-    private String id;
+    @Column(name="pago_id")
+    private Integer id;
     private String nombreTarjeta;
-    public Integer numeroTarjeta;
+    private Integer numeroTarjeta;
     private Integer fechaVencimiento;
     private String tipoTarjeta;
     private Integer codigoCcv;
     private Integer dni;
     private Integer monto;
-    private Integer cantidad;
+    
     
     
 

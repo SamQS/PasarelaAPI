@@ -16,8 +16,8 @@ import com.pasarela.pasarela.repository.UsuarioRepository;
 @Controller
 public class RegisterController {
     
-    private static final String INDEX ="cliente/create"; 
-    private static String MODEL_CONTACT="client";
+    private static final String INDEX ="Register/Register"; 
+    private static String MODEL_CONTACT="registrar";
     private final RegisterRepository registerData;
     private final UsuarioRepository usuariosData;
 
@@ -28,20 +28,20 @@ public class RegisterController {
         this.usuariosData = usuariosData;
     }      
 
-    @GetMapping("/cliente/create")
+    @GetMapping("/Register/Register")
     public String index(Model model) {
         model.addAttribute(MODEL_CONTACT, new Register());
         return INDEX;
     }    
 
-    @PostMapping("/cliente/create")
+    @PostMapping("/Register/Register")
     public String create(Model model, 
         @Valid Register objRegister, BindingResult result ){
         if(result.hasFieldErrors()) {
             model.addAttribute("mensaje", "No se registro con exito");
         }else{
             Usuario user = objRegister.getUser();
-            user.setTipoUsuario("C");
+            user.setTipoUsuario("R");
             this.usuariosData.save(user);
             this.usuariosData.flush();
             this.registerData.save(objRegister);

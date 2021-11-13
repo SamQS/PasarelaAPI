@@ -1,7 +1,6 @@
 package com.pasarela.pasarela.model;
 import javax.persistence.*;
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 @Getter 
 @Setter 
 @NoArgsConstructor
@@ -12,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Bancaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
-    private String id;
+    private Integer id;
     private String nombreBancaria;
     private Integer numeroCuenta;
     private String nombreBanco; 
