@@ -41,6 +41,7 @@ public class UsuarioController {
                 model.addAttribute(MODEL_MESSAGE, "No se ha podido Ingresar Correctamente");
             }else{
                 Optional<Usuario> userDB = this.usuariosData.findById(objUser.getUserID());
+                
                 if(userDB.isPresent()){
                     if(userDB.get().getPassword().equals(objUser.getPassword())){
                         model.addAttribute(MODEL_CONTACT,userDB.get());
